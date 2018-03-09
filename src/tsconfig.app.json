@@ -4,7 +4,15 @@
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
     "module": "es2015",
-    "types": []
+    "experimentalDecorators": true,
+    "types": [],
+    "paths": {
+      "@auth/*" : ["./app/auth/*"],
+      "@books/*" : ["./app/books/*"],
+      "@core/*" : ["./app/core/*"],
+      "@reducers/*" : ["./app/reducers/*"],
+      "@shared/*" : ["./app/shared/*"]
+    }
   },
   "exclude": [
     "test.ts",

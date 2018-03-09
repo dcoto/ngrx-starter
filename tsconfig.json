@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -11,6 +12,13 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "paths": {
+      "@auth/*" : ["./src/app/auth/*"],
+      "@books/*" : ["./src/app/books/*"],
+      "@core/*" : ["./src/app/core/*"],
+      "@reducers/*" : ["./src/app/reducers/*"],
+      "@shared/*" : ["./src/app/shared/*"]
+    },
     "lib": [
       "es2017",
       "dom"

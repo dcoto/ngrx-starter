@@ -4,10 +4,18 @@
     "outDir": "../out-tsc/spec",
     "baseUrl": "./",
     "module": "commonjs",
+    "experimentalDecorators": true,
     "types": [
       "jasmine",
       "node"
-    ]
+    ],
+    "paths": {
+      "@auth/*" : ["./app/auth/*"],
+      "@books/*" : ["./app/books/*"],
+      "@core/*" : ["./app/core/*"],
+      "@reducers/*" : ["./app/reducers/*"],
+      "@shared/*" : ["./app/shared/*"]
+    }
   },
   "files": [
     "test.ts"
