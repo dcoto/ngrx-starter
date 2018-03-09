@@ -11,7 +11,7 @@ import {
   LoginFailure,
   AuthActionTypes,
   LoginRedirect,
-} from '../actions/auth';
+} from '../actions/auth.actions';
 import { User, Authenticate } from '../models/user';
 
 @Injectable()

@@ -1,4 +1,4 @@
-import { AuthActions, AuthActionTypes } from './../actions/auth';
+import { AuthActions, AuthActionTypes } from './../actions/auth.actions';
 import { User } from '../models/user';
 
 /**

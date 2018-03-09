@@ -1,17 +1,16 @@
 import { Observable } from 'rxjs/Observable';
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
 import * as fromAuth from '@auth/reducers/index';
-import * as Auth from '@auth/actions/auth';
 import * as fromRoot from '@reducers/index';
+import * as authActions from '@auth/actions/auth.actions';
 
-import * as layout from '../../actions/layout';
+import * as layoutActions from '../../actions/layout.actions';
 
 @Component({
     selector: 'bc-app',
     templateUrl: './app.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
     showSidenav$: Observable<boolean>;
@@ -30,16 +29,16 @@ export class AppComponent {
         /**
          * All state updates are handles through dispatched actions in 'container' components
          */
-        this.store.dispatch(new layout.CloseSidenav());
+        this.store.dispatch(new layoutActions.CloseSidenav());
     }
 
     openSidenav() {
-        this.store.dispatch(new layout.OpenSidenav());
+        this.store.dispatch(new layoutActions.OpenSidenav());
     }
 
     logout() {
         this.closeSidenav();
 
-        this.store.dispatch(new Auth.Logout());
+        this.store.dispatch(new authActions.Logout());
     }
 }

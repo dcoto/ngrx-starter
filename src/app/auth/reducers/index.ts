@@ -7,8 +7,8 @@ import {
 
 import * as fromRoot from '@reducers/index';
 
-import * as fromAuth from './auth';
-import * as fromLoginPage from './login-page';
+import * as fromAuth from './auth.reducer';
+import * as fromLoginPage from './login-page.reducer';
 
 /**
  * Create the auth state from the 2 reducers in Auth

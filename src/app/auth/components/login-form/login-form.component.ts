@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 import { Authenticate } from '../../models/user';
@@ -6,9 +6,10 @@ import { Authenticate } from '../../models/user';
 @Component({
   selector: 'bc-login-form',
   templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.css']
+  styleUrls: ['./login-form.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent {
 
   @Input()
   set pending(isPending: boolean) {
@@ -31,9 +32,6 @@ export class LoginFormComponent implements OnInit {
       password: new FormControl(''),
     });
   }
-
-
-  ngOnInit() {}
 
   submit() {
     if (this.form.valid) {

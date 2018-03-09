@@ -8,7 +8,7 @@ import { LoginPageComponent } from './containers/login-page/login-page.component
 import { LoginFormComponent } from './components/login-form/login-form.component';
 
 import { AuthService } from './services/auth.service';
-import { AuthGuard } from './services/auth-guard.service';
+import { AuthGuard } from './guards/auth.guard';
 import { AuthEffects } from './effects/auth.effects';
 import { reducers } from './reducers';
 import { MaterialModule } from '../material';

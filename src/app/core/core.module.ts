@@ -11,8 +11,14 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MaterialModule } from '../material';
 
 export const COMPONENTS = [
+  /**
+   * Containers
+   */
   AppComponent,
   PageNotFoundComponent,
+  /**
+   * Components
+   */
   LayoutComponent,
   NavItemComponent,
   SidenavComponent,
