@@ -2,7 +2,7 @@ import { Component, Output, EventEmitter, ChangeDetectionStrategy } from '@angul
 
 @Component({
   selector: 'bc-toolbar',
-  template: './toolbar.component.html',
+  templateUrl: './toolbar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ToolbarComponent {

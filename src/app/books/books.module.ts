@@ -7,18 +7,26 @@ import { EffectsModule } from '@ngrx/effects';
 import { BookEffects } from './effects/book.effects';
 import { CollectionEffects } from './effects/collection.effects';
 import { BookExistsGuard } from './guards/book-exists.guard';
+import { GoogleBooksService } from './services/google-books.service';
 
-import { FindBookPageComponent } from './containers/find-book-page';
-import { ViewBookPageComponent } from './containers/view-book-page';
-import { SelectedBookPageComponent } from './containers/selected-book-page';
-import { CollectionPageComponent } from './containers/collection-page';
+import { BookAuthorsComponent } from './components/book-authors/book-authors.component';
+import { BookDetailComponent } from './components/book-detail/book-detail.component';
+import { BookPreviewComponent } from './components/book-preview/book-preview.component';
+import { BookPreviewListComponent } from './components/book-preview-list/book-preview-list.component';
+import { BookSearchComponent } from './components/book-search/book-search.component';
+import { FindBookPageComponent } from './containers/find-book-page/find-book-page.component';
+import { ViewBookPageComponent } from './containers/view-book-page/view-book-page.component';
+import { SelectedBookPageComponent } from './containers/selected-book-page/selected-book-page.component';
+import { CollectionPageComponent } from './containers/collection-page/collection-page.component';
+
 import { MaterialModule } from '../material';
-
+import { PipesModule } from '@shared/pipes';
 import { reducers } from './reducers';
 
 @NgModule({
   imports: [
     CommonModule,
+    PipesModule,
     MaterialModule,
     RouterModule.forChild([
       { path: 'find', component: FindBookPageComponent },
@@ -49,11 +57,16 @@ import { reducers } from './reducers';
     EffectsModule.forFeature([BookEffects, CollectionEffects]),
   ],
   declarations: [
+    BookAuthorsComponent,
+    BookDetailComponent,
+    BookPreviewComponent,
+    BookPreviewListComponent,
+    BookSearchComponent,
     FindBookPageComponent,
     ViewBookPageComponent,
     SelectedBookPageComponent,
     CollectionPageComponent,
   ],
-  providers: [BookExistsGuard],
+  providers: [BookExistsGuard, GoogleBooksService],
 })
 export class BooksModule {}
